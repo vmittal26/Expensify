@@ -1,8 +1,5 @@
 .expenselist{
 
-    &__edit{
-        width:7rem;
-    }
     &__headertitle{
         text-align: center;
     }
@@ -12,11 +9,5 @@
     &__table{
         @extend .responsive-table;
         @extend .striped;
-    }
-
-    &__editicon{
-        text-align: center;
-        cursor: pointer;
-        margin-left: 1rem;
     }
 }

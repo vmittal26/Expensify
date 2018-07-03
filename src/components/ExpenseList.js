@@ -1,28 +1,40 @@
 import React from "react";
 import {connect} from "react-redux";
 import selectExpenses from '../helpers/selectExpenses';
+import ExpenseListButtonLayout  from './ExpenseListButtonLayout';
 import { withRouter } from 'react-router';
 
 class ExpenseList extends React.Component {
 
     constructor(props){
       super(props);
+      this.state={
+          edit:false,
+          selectedExpense:{}
+      }
     }
 
+    onClick = (expense,event)=>{
+        this.setState({
+                       selectedExpense:{...expense},
+                       edit:event.target.checked
+                    });
+    }
     onDoubleClick = (expense)=>{
-          console.log(expense);
           this.props.history.push(`/edit/${expense.id}` ,{ expense }
       );
     }
     render() {
         return (
+           <div className ="expensedashboard">
+           <ExpenseListButtonLayout expense={this.state.selectedExpense} edit={this.state.edit}  />
             <div className="expenselist">
                 <table className="expenselist__table">
                     <thead>
                         <tr>
                             <th>
                                 <label>
-                                    <input className="filled-in" type="checkbox"/>
+                                    <input onClick = {()=>{}} className="filled-in" type="checkbox"/>
                                     <span className="expenselist__checkbox"></span>
                                 </label>
                             </th>
@@ -38,7 +50,7 @@ class ExpenseList extends React.Component {
                                     <tr key={expense.id} onDoubleClick={()=>this.onDoubleClick(expense)}>
                                         <td>
                                             <label>
-                                                <input className="filled-in" type="checkbox"/>
+                                                <input className="filled-in" onClick = {(event)=>this.onClick(expense,event)} type="checkbox"/>
                                                 <span></span>
                                             </label>
                                         </td>
@@ -52,6 +64,7 @@ class ExpenseList extends React.Component {
                             })}
                     </tbody>
                 </table>
+            </div>
             </div>
         )
     }

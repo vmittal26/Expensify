@@ -74,10 +74,10 @@ export class ExpenseForm extends Component {
                                 normalize={(data) => data  && data.value && data.value.valueOf()}component={RenderField}/> </div>
                     </div>
                     <div className="expense-form__button-group">
-                        <button className="btn waves-effect waves-light" type="submit" disabled={submitting}>Submit
+                        <button className="btn btn-app waves-effect waves-light" type="submit" disabled={submitting}>Submit
                             
                         </button>
-                        <Link to="/" className="expense-form__cancel btn waves-effect waves-light" >Cancel
+                        <Link to="/" className="expense-form__cancel btn btn-app waves-effect waves-light" >Cancel
                         </Link>
                     </div>
                 </form>
