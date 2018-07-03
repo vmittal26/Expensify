@@ -1,0 +1,10 @@
+.container{
+    margin:0rem auto;
+    padding:1rem;
+    width :95%;
+}
+
+.CalendarDay__selected, .CalendarDay__selected:active, .CalendarDay__selected:hover{
+    background: $secondary-color;
+    border:1px solid $secondary-color;
+}

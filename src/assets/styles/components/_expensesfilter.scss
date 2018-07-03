@@ -1,0 +1,9 @@
+.expensesfilter{
+    padding-top:1rem;
+    
+    &__input{
+        @extend .input-field;
+        margin:0;
+        padding: 0rem;
+    }
+}

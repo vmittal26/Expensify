@@ -1,0 +1,35 @@
+.expense-form{
+
+    padding: 2rem 0;
+    &__name,&__amount{
+        @extend .col;
+        @extend .s6;
+    }
+
+    &__note{
+        @extend .col;
+        @extend .s6;
+    }
+    &__datepicker{
+        @extend .col;
+        @extend .s6;
+
+        #expense-date{
+            margin: 0rem;
+            height: 4rem;
+        }
+        .SingleDatePickerInput.SingleDatePickerInput_1.SingleDatePickerInput__withBorder.SingleDatePickerInput__withBorder_2{
+            border:none;
+        }
+    }
+
+    &__button-group{
+        text-align: center;
+        position: relative;
+        z-index: 0;
+    }
+    &__cancel{
+        margin-left: 0.5rem;
+    }
+ 
+}

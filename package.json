@@ -1,0 +1,45 @@
+{
+  "name": "expensify",
+  "version": "1.0.0",
+  "description": "expensify",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack-dev-server --mode development --open --hot",
+    "build": "webpack --mode production"
+  },
+  "author": "Vaibhav Mittal",
+  "license": "MIT",
+  "dependencies": {
+    "moment": "^2.22.2",
+    "react": "^16.3.2",
+    "react-dates": "^17.0.0",
+    "react-dom": "^16.3.2",
+    "react-redux": "^5.0.7",
+    "react-router-dom": "^4.3.0-rc.3",
+    "react-widgets": "^4.3.2",
+    "react-widgets-moment": "^4.0.15",
+    "react-with-styles": "^3.2.0",
+    "redux": "^4.0.0",
+    "redux-form": "^7.3.0"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.4",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
+    "css-loader": "^0.28.11",
+    "extract-text-webpack-plugin": "^4.0.0-beta.0",
+    "file-loader": "^1.1.11",
+    "html-webpack-plugin": "^3.2.0",
+    "material-icons": "^0.2.3",
+    "materialize-css": "^1.0.0-rc.1",
+    "mini-css-extract-plugin": "^0.4.0",
+    "node-sass": "^4.9.0",
+    "sass-loader": "^7.0.1",
+    "style-loader": "^0.21.0",
+    "url-loader": "^1.0.1",
+    "webpack": "^4.8.3",
+    "webpack-cli": "^2.1.3",
+    "webpack-dev-server": "^3.1.4"
+  }
+}

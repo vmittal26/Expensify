@@ -1,0 +1,12 @@
+.addExpenseContainer{
+    @extend .card;
+
+    &__title{
+        text-align: center;
+        padding:0.2rem 0rem;
+        margin:0;
+    }
+    &__content{
+        @extend .card-content;
+    }
+}
