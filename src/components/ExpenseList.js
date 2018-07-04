@@ -16,18 +16,17 @@ class ExpenseList extends React.Component {
 
     onClick = (expense,event)=>{
         this.setState({
-                       selectedExpense:{...expense},
+                       selectedExpense:expense,
                        edit:event.target.checked
                     });
     }
     onDoubleClick = (expense)=>{
-          this.props.history.push(`/edit/${expense.id}` ,{ expense }
-      );
+        this.props.history.push(`/edit/${expense.id}` ,{ expense });
     }
     render() {
         return (
            <div className ="expensedashboard">
-           <ExpenseListButtonLayout expense={this.state.selectedExpense} edit={this.state.edit}  />
+           <ExpenseListButtonLayout expense = {this.state.selectedExpense} onClick={this.onDoubleClick} edit={this.state.edit}  />
             <div className="expenselist">
                 <table className="expenselist__table">
                     <thead>

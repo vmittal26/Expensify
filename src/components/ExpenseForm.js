@@ -7,25 +7,16 @@ import {withRouter ,Link} from 'react-router-dom';
 import { connect } from 'react-redux';
 
 let defaultStateInEditMode = {};
+let isEditMode = false;
 
 export class ExpenseForm extends Component {
 
-    componentWillMount(){
-        if(this.props.defaultStateInEditMode){
-            defaultStateInEditMode = {...this.props.defaultStateInEditMode}
-        }
-    }
-    componentDidMount() {
-        M.textareaAutoResize(document.getElementById("expense-note"));
-        if(!this.state.isEditMode)defaultStateInEditMode={};
-        
-    }
-    constructor(props) {
+    constructor(props){
         super(props);
-        this.state ={
-            isEditMode:this.props.isEditMode?true:false
-        }
+        defaultStateInEditMode = this.props.formState.defaultStateInEditMode;
+        isEditMode=this.props.formState.isEditMode?true:false
     }
+
     submit = (values) => {
         this.props.dispatch(addExpense(values));
         this.props.history.push("/");
@@ -41,7 +32,7 @@ export class ExpenseForm extends Component {
                                 name="name"
                                 type="text"
                                 id={"expense-name"}
-                                isEditMode = {this.state.isEditMode}
+                                isEditMode = {isEditMode}
                                 label="Add Expense"
                                 component={RenderField}/>
                         </div>
@@ -50,7 +41,7 @@ export class ExpenseForm extends Component {
                                 name="amount"
                                 type="number"
                                 id={"expense-amount"}
-                                isEditMode = {this.state.isEditMode}
+                                isEditMode = {isEditMode}
                                 label="Add Amount"
                                 component={RenderField}/>
                         </div>
@@ -62,7 +53,7 @@ export class ExpenseForm extends Component {
                                 id="expense-note"
                                 label="Add Note"
                                 type="textarea"
-                                isEditMode = {this.state.isEditMode}
+                                isEditMode = {isEditMode}
                                 component={RenderField}/>
                         </div>
                         <div className="expense-form__datepicker">
@@ -101,4 +92,4 @@ export default connect(
     state => ({
       initialValues: defaultStateInEditMode // pull initial values from account reducer
     }), // bind account loading action creator
-  )(reduxForm({form: "AddExpenseForm",enableReinitialize: true, validate})(withRouter(ExpenseForm)));
+  )(reduxForm({form: "ExpenseForm",enableReinitialize: true, validate})(withRouter(ExpenseForm)));

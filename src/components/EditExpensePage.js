@@ -4,14 +4,19 @@ import ExpenseForm from "./ExpenseForm";
 
 export default class EditExpensePage extends Component {
 
-    componentDidMount() {
+    constructor(props) {
+        super(props);
+        this.state={
+            isEditMode:true,
+            defaultStateInEditMode:this.props.location.state.expense
+          };
     }
     render() {
         if (slider())slider().close();
         return (
             <div className="container">
                 <h4>Edit Expenses</h4>
-                <ExpenseForm defaultStateInEditMode = {this.props.location.state.expense} isEditMode ={true}/>
+                <ExpenseForm formState = {this.state}/>
             </div>
         );
     }
