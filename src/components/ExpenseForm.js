@@ -19,8 +19,11 @@ export class ExpenseForm extends Component {
 
     submit = (values) => {
         this.props.dispatch(addExpense(values));
-        this.props.history.push("/");
+        this.props.history.push("/reactDataTableDemo");
     }
+    format = (value) =>{
+        return value ? moment(value) : moment();
+    } 
     render() {
         const { handleSubmit, pristine, reset, submitting } = this.props;
         return (
@@ -61,14 +64,14 @@ export class ExpenseForm extends Component {
                                 name="createdAt"
                                 id="expense-date"
                                 type="date"
-                                format={(value) => value ? moment(value) : moment()}
+                                format={this.format}
                                 normalize={(data) => data  && data.value && data.value.valueOf()}component={RenderField}/> </div>
                     </div>
                     <div className="expense-form__button-group">
                         <button className="btn btn-app waves-effect waves-light" type="submit" disabled={submitting}>Submit
                             
                         </button>
-                        <Link to="/" className="expense-form__cancel btn btn-app waves-effect waves-light" >Cancel
+                        <Link to="/reactDataTableDemo" className="expense-form__cancel btn btn-app waves-effect waves-light" >Cancel
                         </Link>
                     </div>
                 </form>

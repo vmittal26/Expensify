@@ -3,6 +3,7 @@ import {connect} from "react-redux";
 import selectExpenses from '../helpers/selectExpenses';
 import ExpenseListButtonLayout  from './ExpenseListButtonLayout';
 import { withRouter } from 'react-router';
+import moment from 'moment';
 
 class ExpenseList extends React.Component {
 
@@ -15,6 +16,7 @@ class ExpenseList extends React.Component {
     }
 
     onClick = (expense,event)=>{
+        
         this.setState({
                        selectedExpense:expense,
                        edit:event.target.checked

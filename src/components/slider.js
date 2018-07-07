@@ -19,7 +19,7 @@ render() {
             <ul id="slide-out" className="sidenav">
                 <li><NavLink to="/" activeClassName="is-active" exact={true}>Dashboard</NavLink></li>
                 <li><NavLink to="/create" activeClassName="is-active">Create Expense</NavLink></li>
-                <li><NavLink to="/help" activeClassName="is-active">Help</NavLink></li>
+                <li><NavLink to="/reactDataTableDemo" activeClassName="is-active">React DataTable Demo</NavLink></li>
             </ul>
             <a href="#" data-target="slide-out" className="sidenav-trigger show-on-large">
             <i className="material-icons">menu</i></a>

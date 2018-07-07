@@ -13,7 +13,7 @@ const jsx = (
     </Provider>
 )
 
-store.dispatch(addExpense({name: "Water-Bill", amount: 100, note:'Pay on 20th ',createdAt: 4500}));
+store.dispatch(addExpense({name: "Water-Bill", amount: 100, note:'Pay on 20th ',createdAt: 1500021}));
 store.dispatch(addExpense({name: "Gas-Bill", note:'Pay on 28th',amount: 200, createdAt: 1000}));
 store.dispatch(addExpense({name: "Electricity-Bill", note:'Pay on 28th',amount: 4000, createdAt: 25000}));
 store.dispatch(addExpense({name: "Credit Card Bill",note:'Pay on 19th',amount: 7000, createdAt: 1200}));
